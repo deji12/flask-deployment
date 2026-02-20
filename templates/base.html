@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+    <html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Auth system</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
+    <body>
+        <div class="center">
+
+            <!-- Flash message goes here -->
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages  %}
+                    {% for category, message in messages  %}
+                        <center>
+                            <h4
+                                {% if category == "error" %}
+                                    style="color: firebrick"
+                                {% else %}
+                                    style="color: dodgerblue"
+                                {% endif %}
+                            >
+                                {{message}}
+                            </h4>
+                        </center>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+
+
+            {% block content %}
+
+            {% endblock content %}
+        </div>
+
+    </body>
+</html>

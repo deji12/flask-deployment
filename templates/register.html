@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <h1>Register</h1>
+    <form method="POST">
+        <div class="txt_field">
+            <input type="text" name="username" required>
+            <span></span>
+            <label>Username</label>
+        </div>
+        <div class="txt_field">
+            <input type="email" name="email" required>
+            <span></span>
+            <label>Email</label>
+            </div>
+        <div class="txt_field">
+            <input type="password" name="password" required>
+            <span></span>
+            <label>Password</label>
+        </div>    
+        <div class="txt_field">
+            <input type="password" name="confirm_password" required>
+            <span></span>
+            <label>Confirm Password</label>
+        </div>    
+        <input type="submit" value="Register">
+        <div class="signup_link">
+            Already have an account? <a href="{{ url_for('login') }}">Login</a>
+        </div>
+    </form>
+    
+{% endblock content %}

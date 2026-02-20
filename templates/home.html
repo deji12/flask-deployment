@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <P>Hello, {{ current_user.username }}! </P>
+    <P>Your email is, {{ current_user.email }}! </P>
+    <br><br>
+    
+    <a href="{{ url_for('logout') }}">Logout</a>
+</body>
+</html>
